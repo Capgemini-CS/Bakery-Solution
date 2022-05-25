@@ -1,0 +1,480 @@
+openapi: 3.1.0
+x-stoplight:
+  id: asjnanaqpzzj8
+info:
+  title: Bakery Solution
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /areas:
+    parameters: []
+    get:
+      summary: ''
+      operationId: get-area
+      responses:
+        '200':
+          description: This is your areas list
+        '401':
+          description: You are unauthorized
+        '404':
+          description: Area not found
+        '500':
+          description: Internal Server Error
+      description: We want to create a new Area for Bakery Application
+      parameters: []
+    post:
+      summary: ''
+      operationId: post-area
+      responses:
+        '201':
+          description: Your area was created.
+        '400':
+          description: Your request doesn't match the request body
+        '401':
+          description: You are unauthorized to create a new Area
+        '409':
+          description: Your object already exist
+        '500':
+          description: Internal Server Error
+      description: We want to create / add a new Area for our Bakery
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Code:
+                  type: string
+                Name:
+                  type: string
+                Created:
+                  type: string
+                Updated:
+                  type: string
+        description: 'To add a new Area you must fill the following fields: Code and Name'
+    delete:
+      summary: ''
+      operationId: delete-area
+      responses:
+        '200':
+          description: Your list is empty
+        '401':
+          description: You are not authorized
+        '500':
+          description: Internal Server Error
+      description: We want to delete all areas
+  /zones:
+    parameters: []
+    get:
+      summary: ''
+      operationId: get-zone
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    zoneID:
+                      type: integer
+                    code:
+                      type: string
+                    name:
+                      type: string
+                    created:
+                      type: string
+                    updated:
+                      type: string
+        '401':
+          description: You are unauthorized
+        '404':
+          description: Zone not found
+        '500':
+          description: Internal Server Error
+      description: We want to create a new Zone for our Bakery Application
+      parameters: []
+    post:
+      summary: ''
+      operationId: post-one
+      responses:
+        '201':
+          description: Your Zone was created
+        '400':
+          description: Your request doesn't match the request body
+        '401':
+          description: You are unauthorized to create a new Zone
+        '409':
+          description: Your object already exist
+        '500':
+          description: Internal Server Error
+      description: We want to create / add a new Zone for our Bakery
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Code:
+                  type: string
+                Name:
+                  type: string
+                Created:
+                  type: string
+                Updated:
+                  type: string
+        description: 'To add a new Zone you must fill the following fields: Code and Name'
+    delete:
+      summary: ''
+      operationId: delete-zone
+      responses:
+        '200':
+          description: Your list is empty now
+        '401':
+          description: You are not authorized
+        '500':
+          description: Internal Server Error
+      description: We want to delete all zones
+  '/areas/{id}':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: This is your area
+        '400':
+          description: Your selection criteria is wrong
+        '404':
+          description: Your area selected was not found
+        '500':
+          description: Internal Server Error
+      operationId: get-area-id
+      description: Select one area by id
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: areaID
+          description: id
+    put:
+      summary: ''
+      operationId: put-area-id
+      responses:
+        '200':
+          description: Area updated succesfully!
+        '400':
+          description: One or many fields are incomplete
+        '500':
+          description: Internal Server Error
+      description: Edit selected area
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                name:
+                  type: string
+                created:
+                  type: string
+                updated:
+                  type: string
+    delete:
+      summary: ''
+      operationId: delete-area-id
+      responses:
+        '200':
+          description: Area has been deleted succesfully!
+        '400':
+          description: Your search criteria is not valid
+        '401':
+          description: You do not have the permission to delete areas
+        '404':
+          description: Searched area does not exist
+        '500':
+          description: Internal Server Error
+      description: Delete area by ID
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+  '/zones/{id}':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: This is your zone
+        '400':
+          description: Your selection criteria is wrong
+        '404':
+          description: Your selected zone was not found
+        '500':
+          description: Internal Server Error
+      operationId: get-zone-id
+      description: Select one zone by id
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: areaID
+          description: id
+    put:
+      summary: ''
+      operationId: put-zone-id
+      responses:
+        '200':
+          description: Zone updated succesfully!
+        '400':
+          description: One or many fields are incomplete
+        '500':
+          description: Internal Server Error
+      description: Edit selected zone
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                name:
+                  type: string
+                created:
+                  type: string
+                updated:
+                  type: string
+    delete:
+      summary: ''
+      operationId: delete-area-id
+      responses:
+        '200':
+          description: Area has been deleted succesfully!
+        '400':
+          description: Your search criteria is not valid
+        '401':
+          description: You do not have the permission to delete areas
+        '404':
+          description: Searched area does not exist
+        '500':
+          description: Internal Server Error
+      description: Delete area by ID
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+  '/shops/{id}':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: This is your shop
+        '400':
+          description: Your selection criteria is wrong
+        '404':
+          description: Your selected shop was not found
+        '500':
+          description: Internal Server Error
+      operationId: get-shop-id
+      description: Select one shop by id
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: shopID
+          description: id
+    put:
+      summary: ''
+      operationId: put-shop-id
+      responses:
+        '200':
+          description: Shop updated succesfully!
+        '400':
+          description: One or many fields are incomplete
+        '500':
+          description: Internal Server Error
+      description: Edit selected shop
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                division:
+                  type: string
+                zone:
+                  type: string
+                region:
+                  type: string
+                created:
+                  type: string
+                updated:
+                  type: string
+    delete:
+      summary: ''
+      operationId: delete-shop-id
+      responses:
+        '200':
+          description: Shop has been deleted succesfully!
+        '400':
+          description: Your search criteria is not valid
+        '401':
+          description: You do not have the permission to delete shops
+        '404':
+          description: Searched shop does not exist
+        '500':
+          description: Internal Server Error
+      description: Delete shop by ID
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+  /shops:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      operationId: get-shops
+      description: We want to create a new Shop for our Bakery Application
+      responses:
+        '200':
+          description: This is your shop
+        '401':
+          description: You are unauthorized
+        '404':
+          description: Shop not found
+        '500':
+          description: Internal Server Error
+      parameters: []
+    post:
+      summary: ''
+      operationId: post-shops
+      responses:
+        '201':
+          description: Your Zone was created
+        '400':
+          description: Your request doesn't match the request body
+        '401':
+          description: You are unauthorized to create a new Shop
+        '409':
+          description: Your object already exist
+        '500':
+          description: Internal Server Error
+      description: We want to create / add a new Shop for our Bakery
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                division:
+                  type: string
+                zone:
+                  type: string
+                region:
+                  type: string
+                created:
+                  type: string
+                updated:
+                  type: string
+        description: 'To add a new Shop you must fill the following fields: Division, Zone, Region'
+    delete:
+      summary: ''
+      operationId: delete-shops
+      responses:
+        '200':
+          description: Your list is empty now
+        '401':
+          description: You are not authorized
+        '500':
+          description: Internal Server Error
+      description: We want to delete all shops
+components:
+  schemas:
+    User:
+      title: User
+      type: object
+      description: ''
+      examples:
+        - id: 142
+          firstName: Alice
+          lastName: Smith
+          email: alice.smith@gmail.com
+          dateOfBirth: '1997-10-31'
+          emailVerified: true
+          signUpDate: '2019-08-24'
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the given user.
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
+        dateOfBirth:
+          type: string
+          format: date
+          example: '1997-10-31'
+        emailVerified:
+          type: boolean
+          description: Set to true if the user's email has been verified.
+        createDate:
+          type: string
+          format: date
+          description: The date that the user was created.
+      required:
+        - id
+        - firstName
+        - lastName
+        - email
+        - emailVerified
+  responses: {}
