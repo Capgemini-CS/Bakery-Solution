@@ -7,7 +7,7 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /areas:
+  /bakery/v1/taxonomy/areas:
     parameters: []
     get:
       summary: ''
@@ -70,7 +70,7 @@ paths:
         '500':
           description: Internal Server Error
       description: We want to delete all areas
-  /zones:
+  /bakery/v1/taxonomy/zones:
     parameters: []
     get:
       summary: ''
@@ -149,7 +149,7 @@ paths:
         '500':
           description: Internal Server Error
       description: We want to delete all zones
-  '/areas/{id}':
+  '/bakery/v1/taxonomy/areas/{id}':
     get:
       summary: Your GET endpoint
       tags: []
@@ -222,7 +222,7 @@ paths:
         name: id
         in: path
         required: true
-  '/zones/{id}':
+  '/bakery/v1/taxonomy/zones/{id}':
     get:
       summary: Your GET endpoint
       tags: []
@@ -295,7 +295,7 @@ paths:
         name: id
         in: path
         required: true
-  '/shops/{id}':
+  '/bakery/v1/taxonomy/shops/{id}':
     get:
       summary: Your GET endpoint
       tags: []
@@ -370,7 +370,7 @@ paths:
         name: id
         in: path
         required: true
-  /shops:
+  /bakery/v1/taxonomy/shops:
     get:
       summary: Your GET endpoint
       tags: []
@@ -435,6 +435,7 @@ paths:
         '500':
           description: Internal Server Error
       description: We want to delete all shops
+    parameters: []
 components:
   schemas:
     User:
