@@ -36,7 +36,9 @@ To be continued...
 ## Roadmap
 
 * For documentation API, please visit [here](https://github.com/Capgemini-CS/Bakery-Solution/tree/main/Docs/OpenAPI)
-* If you want to view the physical model of the database, click [here](https://github.com/Capgemini-CS/Bakery-Solution/tree/main/Docs/Model)
+* If you want to view the physical model of the database, click [here](https://github.com/Capgemini-CS/Bakery-Solution/tree/main/Docs/Model) or check the photo below
+
+![alt text for screen readers](/Docs/Model/model.png "Text to show on mouseover")
 
 ## Contribuitors
 
