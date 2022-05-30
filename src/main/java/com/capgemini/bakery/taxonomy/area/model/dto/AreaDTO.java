@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @ToString
 public class AreaDTO {
-    @NotNull
+
     private Integer areaId;
     @NotNull
     private String code;

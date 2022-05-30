@@ -2,8 +2,7 @@ package com.capgemini.bakery.taxonomy.area.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -11,8 +10,10 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @ToString
 @Entity
+@Table(name = "areas")
 public class Area {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer areaId;
     private String code;
     private String name;
