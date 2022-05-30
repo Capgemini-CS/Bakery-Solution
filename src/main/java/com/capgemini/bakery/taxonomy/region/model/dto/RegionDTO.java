@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @ToString
 public class RegionDTO {
-    @NotNull
+
     private Integer region_id;
     @NotNull
     private String code;

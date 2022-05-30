@@ -2,7 +2,7 @@ package com.capgemini.bakery.taxonomy.region.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -10,7 +10,10 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @ToString
 @Entity
+@Table(name = "regions")
 public class Region {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer region_id;
     private String code;
     private String name;
