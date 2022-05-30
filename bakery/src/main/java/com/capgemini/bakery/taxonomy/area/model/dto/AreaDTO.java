@@ -1,4 +1,4 @@
-package com.capgemini.bakery.taxonomy.region.model.dto;
+package com.capgemini.bakery.taxonomy.area.model.dto;
 
 import lombok.*;
 
@@ -9,9 +9,9 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class RegionDTO {
+public class AreaDTO {
     @NotNull
-    private Integer region_id;
+    private Integer areaId;
     @NotNull
     private String code;
     @NotNull

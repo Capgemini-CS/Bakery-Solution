@@ -1,8 +1,9 @@
-package com.capgemini.bakery.taxonomy.region.model;
+package com.capgemini.bakery.taxonomy.area.model;
 
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Getter
 @Setter
@@ -10,8 +11,9 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Region {
-    private Integer region_id;
+public class Area {
+    @Id
+    private Integer areaId;
     private String code;
     private String name;
 }
