@@ -7,7 +7,7 @@ import org.dozer.DozerBeanMapper;
 public class RegionMapper {
 
     public static RegionDTO toRegionDTO(Region region) {
-        RegionDTO regionDTO = new DozerBeanMapper().map(region,RegionDTO.class);
+        RegionDTO regionDTO = new DozerBeanMapper().map(region, RegionDTO.class);
         return regionDTO;
     }
 
